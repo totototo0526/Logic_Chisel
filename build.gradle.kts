@@ -9,6 +9,7 @@
 plugins {
     kotlin("jvm") version "2.0.21"
     id("net.neoforged.gradle.userdev") version "7.0.120"
+    kotlin("plugin.serialization") version "1.9.23" 
 }
 
 group = "com.example.logicchisel"
@@ -26,6 +27,8 @@ repositories {
 dependencies {
     implementation(kotlin("stdlib"))
     implementation("net.neoforged:neoforge:1.21.5-21.5.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:1.6.3")
+    implementation("io.kamel:kamel-yaml:0.5.0")
 }
 
 // NeoForge用のrunタスク例
