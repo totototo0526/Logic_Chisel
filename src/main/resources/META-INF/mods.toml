@@ -1,0 +1,8 @@
+modLoader="javafml"
+loaderVersion="[2,)
+license="MIT"
+[[mods]]
+modId="logic_chisel"
+version="1.0.0"
+displayName="Logic Chisel"
+description='Kotlin + NeoForge 1.21.6 サンプルMod'

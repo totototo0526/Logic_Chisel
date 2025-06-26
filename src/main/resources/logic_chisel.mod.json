@@ -1,0 +1,7 @@
+{
+    "modid": "logic_chisel",
+    "name": "Logic Chisel",
+    "description": "Kotlin + NeoForge 1.21.6 サンプルMod",
+    "version": "1.0.0",
+    "mcversion": "1.21.6"
+}

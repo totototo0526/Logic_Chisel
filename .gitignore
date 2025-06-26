@@ -1,0 +1,46 @@
+# eclipse
+bin
+*.launch
+.settings
+.metadata
+.classpath
+.project
+
+eclipse
+
+# idea
+out
+*.ipr
+*.iws
+*.iml
+.idea
+.vscode/
+*.sw?
+
+# gradle
+build/
+.gradle/
+!gradle/wrapper/gradle-wrapper.jar
+
+# other
+run/
+runs/
+run-data/
+repo/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Java
+*.class
+
+# Kotlin
+*.kotlin_module
+
+# Others
+*.tmp
+*.bak
