@@ -23,7 +23,7 @@
       ],
       "vmArgs": [
         "@D:\\job\\work\\Logic_Chisel\\build\\moddev\\clientRunVmArgs.txt",
-        "-Dfml.modFolders=logicchisel%%D:\\job\\work\\Logic_Chisel\\bin\\main"
+        "-Dfml.modFolders\u003dlogicchisel%%D:\\job\\work\\Logic_Chisel\\bin\\main"
       ],
       "cwd": "${workspaceFolder}\\run",
       "env": {},
@@ -45,7 +45,7 @@
       ],
       "vmArgs": [
         "@D:\\job\\work\\Logic_Chisel\\build\\moddev\\dataRunVmArgs.txt",
-        "-Dfml.modFolders=logicchisel%%D:\\job\\work\\Logic_Chisel\\bin\\main"
+        "-Dfml.modFolders\u003dlogicchisel%%D:\\job\\work\\Logic_Chisel\\bin\\main"
       ],
       "cwd": "${workspaceFolder}\\run",
       "env": {},
@@ -67,7 +67,7 @@
       ],
       "vmArgs": [
         "@D:\\job\\work\\Logic_Chisel\\build\\moddev\\gameTestServerRunVmArgs.txt",
-        "-Dfml.modFolders=logicchisel%%D:\\job\\work\\Logic_Chisel\\bin\\main"
+        "-Dfml.modFolders\u003dlogicchisel%%D:\\job\\work\\Logic_Chisel\\bin\\main"
       ],
       "cwd": "${workspaceFolder}\\run",
       "env": {},
@@ -89,7 +89,7 @@
       ],
       "vmArgs": [
         "@D:\\job\\work\\Logic_Chisel\\build\\moddev\\serverRunVmArgs.txt",
-        "-Dfml.modFolders=logicchisel%%D:\\job\\work\\Logic_Chisel\\bin\\main"
+        "-Dfml.modFolders\u003dlogicchisel%%D:\\job\\work\\Logic_Chisel\\bin\\main"
       ],
       "cwd": "${workspaceFolder}\\run",
       "env": {},
