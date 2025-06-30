@@ -1,0 +1,123 @@
+# プロジェクト進行状況サマリー (2025-06-30 時点)
+
+## 1. プロジェクト概要
+
+* **プロジェクト名**: Minecraft MOD開発用DSL/フレームワーク開発
+* **最重要課題**: 以下の二律背反する要求の両立。
+    * **アクセシビリティ**: 小学生にも直感的に扱える簡易性。
+    * **フレキシビリティ**: 熟練開発者の要求に応える高度な拡張性。
+
+## 2. DSL（ドメイン固有言語）設計方針
+
+### 基本コンセプト
+YAMLライクな宣言的構文と、独自のイベント駆動型構文を組み合わせた**ハイブリッド方式**を採用。
+* **基本定義 (アイテム名、性能等)**: YAML形式で記述。
+* **動的ロジック (特殊効果等)**: `動作` / `events` キー内に独自構文で記述。
+
+### キー（語彙）仕様
+* **日英両対応**: アクセシビリティ向上のため**日本語キー**を主としつつ、汎用性と熟練者への配慮から**英語キー**にも完全対応。
+* **実装方針**: 内部的には単一の英語キーで処理し、YAMLの読み込み時に日英両方のキーを内部キーに変換する「**エイリアス（別名）方式**」を採用。
+
+### 構文例
+同一のアイテムを、日本語と英語のどちらでも定義可能。
+
+<details>
+<summary><strong>▶ 構文例：炎の剣（日本語版 / 英語版）</strong></summary>
+
+**日本語版 (`items/flame_sword_jp.yml`)**
+```yaml
+アイテム:
+  識別子: "flame_sword"
+  表示名: "炎の剣"
+  種類: "SWORD"
+  耐久値: 350
+  説明文:
+    - "燃え盛る炎を宿した魔法の剣。"
+    - "§c攻撃した敵を燃やす§r"
+  性能:
+    攻撃力: 6
+    攻撃速度: -2.4
+  動作: |
+    onAttackEntity:
+      when (chance(50%)) {
+        target.setFire(duration: 4sec);
+      }
+```
+**英語版 (`items/flame_sword_en.yml`)**
+```yaml
+item:
+  id: "flame_sword"
+  displayName: "Sword of Flame"
+  type: "SWORD"
+  durability: 350
+  lore:
+    - "A magic sword imbued with raging fire."
+    - "§cIgnites entities on hit§r"
+  performance:
+    attackDamage: 6
+    attackSpeed: -2.4
+  events: |
+    onAttackEntity:
+      when (chance(50%)) {
+        target.setFire(duration: 4sec);
+      }
+```
+</details>
+
+## 3. データ構造定義 (基本仕様 v0.1)
+
+### Javaデータクラス
+YAMLファイルの情報をプログラム内部で保持するためのJavaクラス構造を設計。開発効率向上のため、**Lombok**ライブラリの採用を推奨。
+
+<details>
+<summary><strong>▶ 主要データクラス： ItemDefinition.java</strong></summary>
+
+```java
+import java.util.List;
+import lombok.Data;
+
+/**
+ * YAMLから読み込んだアイテム定義の全情報を格納するクラス。
+ */
+@Data
+public class ItemDefinition {
+    private String id;
+    private String displayName;
+    private String type = "ITEM";
+    private Integer stackSize = 64;
+    private Integer durability;
+    private List<String> lore;
+    private Performance performance;
+    private Food food;
+    private String events;
+}
+```
+</details>
+
+### 日英キー対応表 (抜粋)
+
+| 日本語キー | 英語キー | 内部での役割 |
+| :--- | :--- | :--- |
+| `アイテム` | `item` | ルートオブジェクト |
+| `識別子` | `id` | 内部的なID |
+| `表示名` | `displayName`| ゲーム内での表示名 |
+| `性能` | `performance`| 武器・ツール性能のグループ |
+| `食事効果` | `food` | 食料効果のグループ |
+| `動作` | `events` | 独自ロジック記述部 |
+
+## 4. 開発環境
+
+* **使用ツール**:
+    * `Visual Studio Code`: 高い拡張性とカスタマイズ性。
+    * `GitHub`: 堅牢なバージョン管理とチーム開発基盤。
+* **推奨ライブラリ**:
+    * `SnakeYAML`: JavaにおけるYAMLパーサーの標準ライブラリ。
+    * `Lombok`: 定型コードを自動生成し、コードの可読性を向上。
+
+## 5. 現在のフェーズと次のステップ
+
+* **現在のフェーズ**: **データ構造の定義完了**
+    * DSLの基本語彙と、それを格納するJavaクラスの設計が完了しました。
+
+* **次のステップ**: **パーサーの実装**
+    * YAMLファイルを読み込み、定義した`ItemDefinition`クラスのオブジェクトに変換する処理の実装に着手します。
