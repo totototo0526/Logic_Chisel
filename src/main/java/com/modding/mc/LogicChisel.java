@@ -92,8 +92,9 @@ public class LogicChisel {
         // Register the Deferred Register to the mod event bus so blocks get registered
         BLOCKS.register(modEventBus);
         // Register the Deferred Register to the mod event bus so items get registered
-        ITEMS.register(modEventBus);
+        // ITEMS.register(modEventBus);
         // Register the Deferred Register to the mod event bus so tabs get registered
+        DslItemLoader.register(modEventBus);
         CREATIVE_MODE_TABS.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in.
@@ -101,17 +102,17 @@ public class LogicChisel {
         // to respond directly to events.
         // Do not add this line if there are no @SubscribeEvent-annotated functions in
         // this class, like onServerStarting() below.
-        NeoForge.EVENT_BUS.register(this);
+        // NeoForge.EVENT_BUS.register(this);
 
         // Register the item to a creative tab
-        modEventBus.addListener(this::addCreative);
+        // modEventBus.addListener(this::addCreative);
 
         // Register our mod's ModConfigSpec so that FML can create and load the config
         // file for us
-        modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+        // modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
 
         // DSLローダーをセットアップイベントに登録
-        modEventBus.addListener(DslItemLoader::onCommonSetup);
+        // modEventBus.addListener(DslItemLoader::onCommonSetup);
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
