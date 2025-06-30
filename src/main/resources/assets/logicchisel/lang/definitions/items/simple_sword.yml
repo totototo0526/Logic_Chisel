@@ -1,0 +1,8 @@
+# このファイルは、まずパーサーが正しく動作するかをテストするための最も基本的な定義です。
+# そのため、キーは英語で記述しています。
+
+id: "simple_sword"
+displayName: "シンプルな剣"
+durability: 100
+performance:
+  attackDamage: 4.5
