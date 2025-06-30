@@ -1,26 +1,49 @@
-# eclipse
-bin
+# Eclipse
+bin/
 *.launch
-.settings
-.metadata
+.settings/
+.metadata/
 .classpath
 .project
 
-# idea
-out
+# IntelliJ IDEA
+out/
 *.ipr
 *.iws
 *.iml
-.idea
+.idea/
+.vscode/
 
-# gradle
-build
-.gradle
+# Gradle
+build/
+.gradle/
 
-# other
-eclipse
-run
-runs
-run-data
+# OSごとの不要ファイル
+.DS_Store
+Thumbs.db
 
-repo
+# ログやレポート
+*.log
+reports/
+
+# 一時ファイル
+*.tmp
+*.swp
+*.swo
+
+# テンポラリやキャッシュ
+tmp/
+
+# ユーザー固有の設定や出力
+run/
+runs/
+run-data/
+
+# NeoForgeやmod開発用の生成物
+moddev/
+
+# zipや配布用アーカイブ
+*.zip
+
+# その他
+repo/
