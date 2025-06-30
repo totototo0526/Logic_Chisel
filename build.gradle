@@ -133,6 +133,13 @@ dependencies {
     // For more info:
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
+
+    // YAMLパーサー
+    implementation 'org.yaml:snakeyaml:2.2'
+
+    // 定型コードの自動生成
+    compileOnly 'org.projectlombok:lombok:1.18.34'
+    annotationProcessor 'org.projectlombok:lombok:1.18.34'
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.
