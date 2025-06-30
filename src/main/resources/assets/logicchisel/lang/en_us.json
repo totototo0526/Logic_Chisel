@@ -1,0 +1,13 @@
+{
+  "itemGroup.logicchisel": "Example Mod Tab",
+  "block.logicchisel.example_block": "Example Block",
+  "item.logicchisel.example_item": "Example Item",
+
+  "logicchisel.configuration.title": "Logic_Chisel Configs",
+  "logicchisel.configuration.section.logicchisel.common.toml": "Logic_Chisel Configs",
+  "logicchisel.configuration.section.logicchisel.common.toml.title": "Logic_Chisel Configs",
+  "logicchisel.configuration.items": "Item List",
+  "logicchisel.configuration.logDirtBlock": "Log Dirt Block",
+  "logicchisel.configuration.magicNumberIntroduction": "Magic Number Text",
+  "logicchisel.configuration.magicNumber": "Magic Number"
+}
