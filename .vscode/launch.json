@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "SimpleParser",
+      "request": "launch",
+      "mainClass": "com.modding.mc.dsl.parser.SimpleParser",
+      "projectName": "Logic_Chisel"
+    },
+    {
+      "type": "java",
       "request": "launch",
       "name": "Client",
       "presentation": {
@@ -16,7 +23,7 @@
       ],
       "vmArgs": [
         "@D:\\job\\work\\Logic_Chisel\\build\\moddev\\clientRunVmArgs.txt",
-        "-Dfml.modFolders\u003dlogicchisel%%D:\\job\\work\\Logic_Chisel\\bin\\main"
+        "-Dfml.modFolders=logicchisel%%D:\\job\\work\\Logic_Chisel\\bin\\main"
       ],
       "cwd": "${workspaceFolder}\\run",
       "env": {},
@@ -38,7 +45,7 @@
       ],
       "vmArgs": [
         "@D:\\job\\work\\Logic_Chisel\\build\\moddev\\dataRunVmArgs.txt",
-        "-Dfml.modFolders\u003dlogicchisel%%D:\\job\\work\\Logic_Chisel\\bin\\main"
+        "-Dfml.modFolders=logicchisel%%D:\\job\\work\\Logic_Chisel\\bin\\main"
       ],
       "cwd": "${workspaceFolder}\\run",
       "env": {},
@@ -60,7 +67,7 @@
       ],
       "vmArgs": [
         "@D:\\job\\work\\Logic_Chisel\\build\\moddev\\gameTestServerRunVmArgs.txt",
-        "-Dfml.modFolders\u003dlogicchisel%%D:\\job\\work\\Logic_Chisel\\bin\\main"
+        "-Dfml.modFolders=logicchisel%%D:\\job\\work\\Logic_Chisel\\bin\\main"
       ],
       "cwd": "${workspaceFolder}\\run",
       "env": {},
@@ -82,7 +89,7 @@
       ],
       "vmArgs": [
         "@D:\\job\\work\\Logic_Chisel\\build\\moddev\\serverRunVmArgs.txt",
-        "-Dfml.modFolders\u003dlogicchisel%%D:\\job\\work\\Logic_Chisel\\bin\\main"
+        "-Dfml.modFolders=logicchisel%%D:\\job\\work\\Logic_Chisel\\bin\\main"
       ],
       "cwd": "${workspaceFolder}\\run",
       "env": {},
