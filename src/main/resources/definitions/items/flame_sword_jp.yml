@@ -1,0 +1,16 @@
+アイテム:
+  識別子: "flame_sword"
+  表示名: "炎の剣"
+  種類: "SWORD"
+  耐久値: 350
+  説明文:
+    - "燃え盛る炎を宿した魔法の剣。"
+    - "§c攻撃した敵を燃やす§r"
+  性能:
+    攻撃力: 6
+    攻撃速度: -2.4
+  動作: |
+    onAttackEntity:
+      when (chance(50%)) {
+        target.setFire(duration: 4sec);
+      }
